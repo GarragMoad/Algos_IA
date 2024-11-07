@@ -11,28 +11,28 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		String fichierEpreuves = "Epreuves.txt";
+		String fichierEpreuves = "C:\\Users\\garra\\Documents\\ESIREM\\4A\\IA\\TP_algos\\epreuves_glouton\\out\\production\\exercice1\\tp1_vEtudiants\\exercice1\\Epreuves.txt";
 		
 		ListeEpreuves listeEpreuves = new ListeEpreuves(fichierEpreuves);
 
-		System.out.println("#################################################");
+		/*System.out.println("#################################################");
 		System.out.println("# Toutes les epreuves inscrites dans le fichier #");
 		System.out.println("#################################################");
 		
 		System.out.println(listeEpreuves);
-		System.out.println();
+		System.out.println();*/
 		
 		listeEpreuves.triParHeureFin();
 		
-		System.out.println("#################################################");
+		/*System.out.println("#################################################");
 		System.out.println("# Epreuves triees par horaires de fin croissant #");
 		System.out.println("#################################################");
 		
 		System.out.println(listeEpreuves);
-		System.out.println();
+		System.out.println();*/
 		
 		
-		/*Epreuve e = listeEpreuves.get(4);
+		/*Epreuve e = listeEpreuves.get(3);
 		listeEpreuves.eliminerConflits(e);
 		
 		System.out.println("#################################################");
@@ -48,24 +48,14 @@ public class Main {
 		ArrayList<Epreuve> planning = new ArrayList<Epreuve>();
 		// Implementez votre algorithme de planification efficace des epreuves.
 		// Les epreuves retenues seront ajoutees, au fur et a mesure dans "planning"
-		planning.add(listeEpreuves.get(0));
-		for (int i = 1; i < listeEpreuves.getListe().size(); i++) {
-			Epreuve e = listeEpreuves.get(i);
-			boolean conflit = false;
-			for (int j = 0; j < planning.size(); j++) {
-				Epreuve epreuve = planning.get(j);
-				if (e.getDebut().before(epreuve.getFin()) && e.getFin().after(epreuve.getDebut())) {
-					conflit = true;
-					break;
-				}
-			}
-			if (!conflit) {
-				planning.add(e);
-			}
+			while(listeEpreuves.getListe().size()>0){
+			planning.add(listeEpreuves.get(0));
+			listeEpreuves.eliminerConflits(listeEpreuves.get(0));
 		}
 
+
 		
-		Collections.sort((List<Epreuve>) planning);
+		//Collections.sort((List<Epreuve>) planning);
 		
 		System.out.println("#################################################");
 		System.out.println("#             Planning des epreuves             #");

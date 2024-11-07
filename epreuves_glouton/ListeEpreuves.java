@@ -55,7 +55,7 @@ public class ListeEpreuves {
 	public void eliminerConflits(Epreuve e) {
 		for (int i = 0; i < liste.size(); i++) {
 			Epreuve epreuve = liste.get(i);
-			if (e.getDebut().before(epreuve.getFin()) && e.getFin().after(epreuve.getDebut())) {
+			if (e.getDebut().before(epreuve.getFin()) && e.getFin().getTime()>epreuve.getDebut().getTime()) {
 				liste.remove(i);
 				i--;
 			}
