@@ -15,6 +15,8 @@ public class Main {
 		
 		ListeEpreuves listeEpreuves = new ListeEpreuves(fichierEpreuves);
 
+
+
 		/*System.out.println("#################################################");
 		System.out.println("# Toutes les epreuves inscrites dans le fichier #");
 		System.out.println("#################################################");
@@ -24,12 +26,12 @@ public class Main {
 		
 		listeEpreuves.triParHeureFin();
 		
-		/*System.out.println("#################################################");
+		System.out.println("#################################################");
 		System.out.println("# Epreuves triees par horaires de fin croissant #");
 		System.out.println("#################################################");
 		
 		System.out.println(listeEpreuves);
-		System.out.println();*/
+		System.out.println();
 		
 		
 		/*Epreuve e = listeEpreuves.get(3);
